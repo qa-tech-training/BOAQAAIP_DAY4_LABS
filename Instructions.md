@@ -317,7 +317,7 @@ This will provision the instances which AWX will configure.
 3. For performance reasons, we will run AWX on a local VM using Hyper-V. Launch Hyper-V and start the AWX VM.
 4. Connect to the VM. The username and password are both 'qa'. Make a note of the VM's IP (run `ip addr show eth0 | grep "inet "`), and run the provided install_awx.sh script:
 ```bash
-./install_awx.sh
+./install_awx_kind.sh
 ```
 5. The AWX init script takes several minutes to run, after which AWX will need another several minutes to fully initialise. Take the time to review the [explanation](#the-awx-init-script-explained) of what the script is actually doing
 6. Navigate to http://<awx_vm_ip>:30080 in a new browser tab. If AWX is still configuring, you may see connection refused or an internal server error - wait until the page reloads
