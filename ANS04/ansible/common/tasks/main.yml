@@ -1,0 +1,14 @@
+---
+# tasks file for common
+- name: Install NGINX
+  apt:
+    pkg: 
+    - nginx
+    - git
+    state: "{{ state }}"
+    update_cache: true
+- name: Start NGINX Service
+  service:
+    name: nginx
+    state: started
+  when: "{{ state }} == present"

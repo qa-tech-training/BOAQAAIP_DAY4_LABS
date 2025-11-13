@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  connection: local
+  name: Use Credentials
+  tasks:
+  - name: Make API Call
+    uri:
+      url: "http://localhost:5000/auth/tokens"
+      method: "POST"
+      url_username: "learner"
+      url_password: "p@ssword"
+      return_content: true
+    register: result
+  
+  - name: print info
+    debug:
+      msg: "{{ result.content }}"

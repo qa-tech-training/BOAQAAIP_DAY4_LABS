@@ -1,0 +1,8 @@
+---
+# tasks file for proxy
+- name: transfer_nginx_conf
+  template:
+    src: nginx-proxy.conf
+    dest: /etc/nginx/nginx.conf
+  when: "{{ state }} == present"
+  notify: restart nginx
