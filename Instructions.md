@@ -315,7 +315,7 @@ This will provision the instances which AWX will configure.
 
 ##### Deploy AWX
 3. For performance reasons, we will run AWX on a local VM using Hyper-V. Launch Hyper-V and start the AWX VM.
-4. Connect to the VM. The username and password are both 'qa'. Make a note of the VM's IP (run `ip addr show eth0 | grep "inet "`), and run the provided install_awx.sh script:
+4. Connect to the VM. The username and password are both 'qa'. Make a note of the VM's IP (run `ip addr show eth0 | grep "inet "`), and run the provided install_awx_kind.sh script:
 ```bash
 ./install_awx_kind.sh
 ```
