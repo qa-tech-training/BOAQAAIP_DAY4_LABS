@@ -456,3 +456,14 @@ cat secret.json
     * secret path: /data/ansible-ssh-key
     * secret key: sshkey
 5. Return to the job template you defined earlier and trigger a new execution, to test the connectivity with the key now pulled from vault.
+
+### Optional Stretch Lab
+* In Hyper-V, start the 3 Centos VMs
+* Generate a new SSH key pair, and:
+  * place the _public key_ material in the authorized_keys file (`/home/qa/.ssh/authorized_keys`) on each of the centos VMs
+  * store the _private key_ material as a new vault credential, and create a new AWX credential with the username 'qa', privilege escalation method 'sudo', privilege escalation password 'qa', and your new vault credential as its' source
+* Create a Github Account if you do not already have one, and sign in
+* fork the https://github.com/qa-tech-training/sample-awx-project repo. Update the tasks for the _common_ role to work on centos instead of ubuntu. (hint: see documentation for the ansible.builtin.yum module)
+* Add a new AWX project which uses _your fork_ of the sample repo as a source
+* add a new AWX inventory with the hostnames of the three centos VMs. Create groups gcp_role_appserver and gcp_role_proxy, allocating one of the VMs as the proxy and the other two as app servers
+* Create a new job definition to run the playbook against the centos VMs. If successful, the job when run should deploy the same sample website onto the centos VMs
