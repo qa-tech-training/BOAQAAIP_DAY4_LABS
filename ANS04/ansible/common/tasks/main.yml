@@ -11,4 +11,4 @@
   service:
     name: nginx
     state: started
-  when: "{{ state }} == present"
+  when: state == 'present'
