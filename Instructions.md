@@ -67,7 +67,7 @@ terraform apply
 ```ini
 [defaults]
     remote_user = ansible
-    private_key_file = ~/Labs/ANS02/ansible_key
+    private_key_file = ~/ansible_key
     callbacks_enabled = timer, profile_tasks, profile_roles
     fact_caching = jsonfile # <- add this and next two lines
     fact_caching_timeout = 3600
@@ -110,7 +110,7 @@ Another source of performance issues can be the time taken to establish SSH conn
 ```ini
 [defaults]
   remote_user = ansible
-  private_key_file = ~/Labs/ANS02/ansible_key
+  private_key_file = ~/ansible_key
   callbacks_enabled = timer, profile_tasks, profile_roles
   fact_caching = jsonfile
   fact_caching_timeout = 3600
