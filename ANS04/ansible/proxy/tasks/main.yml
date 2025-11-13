@@ -4,5 +4,5 @@
   template:
     src: nginx-proxy.conf
     dest: /etc/nginx/nginx.conf
-  when: "{{ state }} == present"
+  when: state == 'present'
   notify: restart nginx
